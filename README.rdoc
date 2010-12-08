@@ -1,16 +1,22 @@
 = attr_symbol
 
-Description goes here.
+Allows certain attributes in ActiveRecord models to be handled as symbols.  These attributes are
+stored in string columns in the underlying data store.
 
-== Note on Patches/Pull Requests
- 
-* Fork the project.
-* Make your feature addition or bug fix.
-* Add tests for it. This is important so I don't break it in a
-  future version unintentionally.
-* Commit, do not mess with rakefile, version, or history.
-  (if you want to have your own version, that is fine but bump version in a commit by itself I can ignore when I pull)
-* Send me a pull request. Bonus points for topic branches.
+== Usage
+
+    class Thing < ActiveRecord::Base
+      attr_symbol :a
+    end
+
+    # Stores the string 'foo' in the field 'a'
+    thing = Thing.create!(:a => :foo)
+
+    thing = Thing.find(1)
+    thing.a  ### Returns :foo
+
+    thing.a = 'urk'
+    thing.a  ### Returns :urk
 
 == Copyright
 
