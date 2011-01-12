@@ -12,7 +12,7 @@ module ActiveRecord::AttrSymbol
           self[attr].try(:to_sym)
         end
 
-        define_method(:"#{attr}=") do |value|
+        define_method("#{attr}=") do |value|
           self[attr] = value.try(:to_s)
         end
       end
