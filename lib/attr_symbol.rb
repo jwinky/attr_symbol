@@ -8,6 +8,10 @@ module ActiveRecord::AttrSymbol
 
     def attr_symbol(*attributes)
       attributes.each do |attr|
+        unless columns_hash[attr.to_s] && columns_hash[attr.to_s].type == :string
+          raise ArgumentError, "Attribute :#{attr} is not a database column of type string"
+        end
+
         define_method(attr) do
           self[attr].try(:to_sym)
         end
