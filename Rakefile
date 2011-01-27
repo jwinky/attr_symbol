@@ -10,8 +10,8 @@ begin
     gem.email = "jwinky+gems@gmail.com"
     gem.homepage = "http://github.com/jwinky/attr_symbol"
     gem.authors = ["Justin Wienckowski"]
-    gem.add_development_dependency "shoulda", ">= 0"
-    gem.add_development_dependency "activerecord", ">= 0"
+    gem.add_development_dependency "shoulda", ">= 2.11.3"
+    gem.add_dependency "activerecord", ">= 2.3.5"
   end
   Jeweler::GemcutterTasks.new
 rescue LoadError
