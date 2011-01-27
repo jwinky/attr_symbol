@@ -20,4 +20,4 @@ stored in string columns in the underlying data store.
 
 == Copyright
 
-Copyright (c) 2010 Justin Wienckowski. See LICENSE for details.
+Copyright (c) 2011 Justin Wienckowski. See LICENSE for details.
