@@ -17,7 +17,7 @@ module ActiveRecord::AttrSymbol
         end
 
         define_method("#{attr}=") do |value|
-          self[attr] = value.try(:to_s)
+          self[attr] = value.blank? ? nil : value.try(:to_s)
         end
       end
     end    
