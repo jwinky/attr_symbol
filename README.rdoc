@@ -13,13 +13,16 @@ stored in string columns in the underlying data store.
     thing = Thing.create!(:a => :foo)
 
     thing = Thing.find(1)
-    thing.a  ### Returns :foo
+    thing.a --> :foo
 
     thing.a = 'urk'
-    thing.a  ### Returns :urk
+    thing.a --> :urk
 
-If any of the attributes passed to #attr_symbol are not database columns of type string, an
-ArgumentError exception will be raised.
+    thing.a = ''
+    thing.a --> nil
+
+    thing.a = '  '
+    thing.a --> nil
 
 == Copyright
 
