@@ -23,6 +23,7 @@ Gem::Specification.new do |s|
     "README.rdoc",
     "Rakefile",
     "VERSION",
+    "attr_symbol.gemspec",
     "lib/attr_symbol.rb",
     "test/helper.rb",
     "test/test_attr_symbol.rb"
