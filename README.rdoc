@@ -18,6 +18,9 @@ stored in string columns in the underlying data store.
     thing.a = 'urk'
     thing.a  ### Returns :urk
 
+If any of the attributes passed to #attr_symbol are not database columns of type string, an
+ArgumentError exception will be raised.
+
 == Copyright
 
 Copyright (c) 2011 Justin Wienckowski. See LICENSE for details.
