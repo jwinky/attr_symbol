@@ -2,7 +2,6 @@ PATH
   remote: .
   specs:
     attr_symbol (0.0.4)
-      activerecord (~> 2.3.5)
 
 GEM
   remote: http://rubygems.org/
@@ -26,6 +25,7 @@ PLATFORMS
   ruby
 
 DEPENDENCIES
+  activerecord (~> 2.3.5)
   attr_symbol!
   jeweler
   shoulda (~> 2.11.3)
