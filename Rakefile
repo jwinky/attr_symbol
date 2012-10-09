@@ -10,7 +10,6 @@ begin
     gem.email = "jwinky+gems@gmail.com"
     gem.homepage = "http://github.com/jwinky/attr_symbol"
     gem.authors = ["Justin Wienckowski"]
-    gem.add_dependency "activerecord", "~> 2.3.5"
   end
   Jeweler::GemcutterTasks.new
 rescue LoadError
@@ -25,13 +24,3 @@ Rake::TestTask.new(:test) do |test|
 end
 
 task :default => :test
-
-# require 'rake/rdoctask'
-# Rake::RDocTask.new do |rdoc|
-#   version = File.exist?('VERSION') ? File.read('VERSION') : ""
-# 
-#   rdoc.rdoc_dir = 'rdoc'
-#   rdoc.title = "attr_symbol #{version}"
-#   rdoc.rdoc_files.include('README*')
-#   rdoc.rdoc_files.include('lib/**/*.rb')
-# end
