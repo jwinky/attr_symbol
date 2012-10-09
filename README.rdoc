@@ -1,9 +1,31 @@
 = attr_symbol
 
-Allows certain attributes in ActiveRecord models to be handled as symbols.  These attributes are
-stored in string columns in the underlying data store.
+Allows you to declare attributes that are handled as symbols.  Assigning a value to the attribute
+converts it to a symbol, and accessing the attribute always returns a symbol.
 
-== Usage
+When used in an ActiveRecord model class, the attribute will be stored as a string in the underlying
+database column.
+
+== Usage in Plain Ol' Ruby Objects
+
+    class User
+        attr_symbol :state
+                 
+        def initialize
+            @state = :inactive
+        end
+    end
+
+    u = User.new
+    p u.state # => :inactive
+
+    u.state = 'active'
+    p u.state # => :active
+
+    u.state = "    \r  \n\r  \n \n  inactive \n\r  \n\r    foo filler \r <html lang=\"en\"></html> \r\n \n\n   "
+    p u.state # => :inactive
+
+== Usage with ActiveRecord
 
     class Thing < ActiveRecord::Base
       attr_symbol :a
@@ -26,4 +48,4 @@ stored in string columns in the underlying data store.
 
 == Copyright
 
-Copyright (c) 2011 Justin Wienckowski. See LICENSE for details.
+Copyright (c) 2012 Justin Wienckowski. Freely distributable under the MIT License.  See LICENSE for details.
