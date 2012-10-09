@@ -1,5 +1,6 @@
 require 'rubygems'
 require 'test/unit'
+require 'bundler/setup'
 require 'shoulda'
 require 'active_record'
 

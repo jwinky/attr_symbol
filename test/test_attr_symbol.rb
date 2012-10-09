@@ -7,8 +7,25 @@ class Thing < ActiveRecord::Tableless
   attr_symbol :foo
 end
 
+class Node
+  attr_symbol :type
+  
+  def initialize
+    @type = :resource
+  end
+end
 
 class TestAttrSymbol < Test::Unit::TestCase
+  context "Normal object" do
+    subject { Node.new }
+    
+    should("store the Symbol :collection in the 'type' attribute") do
+      assert_equal :resource, subject.type
+      subject.type = "     \r \n \r\n  \n\r  collection  \r \n \r\n  \n\rlol \r \n \r\n  \n\r     wtf omg "
+      assert_equal :collection, subject.type
+    end
+  end
+  
   context "Setting attribute 'foo'" do
     subject { Thing.new }
 
