@@ -5,7 +5,7 @@ class Module
     attributes.each do |attribute|
       attr_reader attribute.to_sym
       
-      define_method("#{attribute}=") { |value| instance_variable_set("@#{attribute}", value.to_sym) }
+      define_method("#{attribute}=") { |value| instance_variable_set("@#{attribute}", value.to_s.strip.lines.first.strip.to_sym) }
     end
   end
 end
